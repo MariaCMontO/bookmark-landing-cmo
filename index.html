@@ -1,134 +1,539 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="/output.css" />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Bookmark landing page</title>
+    <title>Frontend Mentor | Bookmark landing page</title>
+  </head>
+  <body class="bg-white">
+    <main class="flex flex-col">
+      <nav
+        id="nav"
+        class="relative flex justify-between items-center px-6 py-8 md:px-40 md:py-12"
+      >
+        <img
+          class=""
+          id="logo-icon"
+          src="/images/logo-bookmark.svg"
+          alt="Bookmark Logo"
+        />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+        <!-- Menu displayed Movile -->
+        <div
+          id="menu-movile"
+          class="hidden absolute bg-blue950 opacity-95 top-0 left-0 w-full h-[667px] z-20 flex flex-col items-center gap-10 py-10 px-8"
+        >
+          <div class="w-full flex justify-between items-start">
+            <img
+              class=""
+              src="/images/logo-bookmark-menu.svg"
+              alt="Bookmark Logo"
+            />
+            <button
+              id="close-button"
+              class=""
+              type="button"
+              aria-label="Click this button to close the menu"
+            >
+              <img src="/images/icon-close.svg" alt="Close icon" />
+            </button>
+          </div>
+          <div class="w-full flex flex-col justify-center items-center">
+            <span
+              class="text-base uppercase text-white font-normal cursor-pointer tracking-widest hover:text-red400 py-5 border-t border-b border-white/20 w-full text-center"
+              >Features</span
+            >
+            <span
+              class="text-base uppercase text-white font-normal cursor-pointer tracking-widest hover:text-red400 py-5 border-b border-white/20 w-full text-center"
+              >Pricing</span
+            >
+            <span
+              class="text-base uppercase text-white font-normal cursor-pointer tracking-widest hover:text-red400 py-5 border-b border-white/20 w-full text-center"
+              >Contact</span
+            >
+            <span
+              class="text-base w-full text-center mt-5 text-white uppercase font-medium cursor-pointer border-2 py-2 px-10 border-white rounded tracking-widest transition-colors duration-300 ease-in-out"
+              >Login</span
+            >
+          </div>
+          <div class="flex gap-8 mt-auto">
+            <img src="/images/icon-facebook.svg" alt="Facebook icon" />
+            <img src="/images/icon-twitter.svg" alt="Twitter icon" />
+          </div>
+        </div>
 
-  Features
-  Pricing
-  Contact
-  Login
+        <div class="hidden md:flex md:gap-10 items-center">
+          <span
+            class="text-sm uppercase text-blue950 font-normal cursor-pointer tracking-widest hover:text-red400"
+            >Features</span
+          >
+          <span
+            class="text-sm uppercase text-blue950 font-normal cursor-pointer tracking-widest hover:text-red400"
+            >Pricing</span
+          >
+          <span
+            class="text-sm uppercase text-blue950 font-normal cursor-pointer tracking-widest hover:text-red400"
+            >Contact</span
+          >
+          <span
+            class="text-sm text-white bg-red400 hover:bg-white uppercase hover:text-red400 font-normal cursor-pointer hover:border-2 py-3 px-10 hover:border-red400 rounded-lg tracking-widest transition-colors duration-300 ease-in-out"
+            >Login</span
+          >
+        </div>
 
-  A Simple Bookmark Manager
+        <button
+          id="menu-icon"
+          class="md:hidden"
+          type="button"
+          aria-label="Click this button to open the menu"
+        >
+          <img src="/images/icon-hamburger.svg" alt="Menu Icon" />
+        </button>
+      </nav>
 
-  A clean and simple interface to organize your favourite websites. Open a new 
-  browser tab and see your sites load instantly. Try it for free.
+      <section
+        class="flex flex-col gap-10 mt-[70px] md:flex-row-reverse md:px-1 md:items-center md:gap-0"
+        aria-labelledby="bookmark-title"
+      >
+        <div class="relative md:w-full md:pr-12">
+          <div
+            class="absolute bottom-0 md:-bottom-5 right-0 w-[300px] md:w-[499px] h-[165px] md:h-[345px] bg-blue600 rounded-bl-[35%] z-0"
+          ></div>
+          <img
+            class="relative z-10 mx-auto w-[93%] md:w-full md:mx-0"
+            src="/images/illustration-hero.svg"
+            alt="Mockup ilustration"
+          />
+        </div>
 
-  Get it on Chrome
-  Get it on Firefox
+        <div class="flex flex-col items-center gap-5 px-10 md:ml-28">
+          <h1
+            id="bookmark-title"
+            class="text-2xl text-blue950 font-semibold text-center md:text-5xl md:text-left"
+          >
+            A Simple Bookmark Manager
+          </h1>
+          <p
+            class="text-sm text-gray-400 text-center mx-1 leading-relaxed md:text-left md:text-lg md:"
+          >
+            A clean and simple interface to organize your favourite websites.
+            Open a new browser tab and see your sites load instantly. Try it for
+            free.
+          </p>
+          <div
+            class="flex flex-row justify-between gap-2.5 w-full md:justify-normal md:gap-4"
+          >
+            <button
+              class="bg-blue600 border-2 border-transparent text-sm text-white rounded px-3 md:px-6 py-3 font-medium hover:bg-white hover:border-2 hover:border-blue600 hover:text-blue600 transition-colors duration-300 ease-in-out"
+            >
+              Get it on Chrome
+            </button>
+            <button
+              class="text-gray-600 text-sm rounded px-4 md:px-6 py-3 shadow-md font-medium hover:shadow-none hover:border-2 hover:border-gray-700 transition-colors duration-300 ease-in-out"
+            >
+              Get it on Firefox
+            </button>
+          </div>
+        </div>
+      </section>
 
-  Features
+      <section
+        class="flex flex-col gap-8 mt-[120px] md:gap-12"
+        aria-labelledby="features-title"
+      >
+        <div class="mx-10 flex flex-col items-center gap-4">
+          <h2
+            class="text-lg text-blue950 font-medium md:text-3xl"
+            id="features-title"
+          >
+            Features
+          </h2>
+          <p
+            class="text-sm text-gray-400 text-center mx-1 leading-relaxed md:text-lg md:w-[532px]"
+          >
+            Our aim is to make it quick and easy for you to access your
+            favourite websites. Your bookmarks sync between your devices so you
+            can access them on the go.
+          </p>
+        </div>
 
-  Our aim is to make it quick and easy for you to access your favourite websites. 
-  Your bookmarks sync between your devices so you can access them on the go.
+        <div
+          class="flex flex-col mx-10 md:mx-[352px] md:flex-row md:justify-center"
+          aria-label="Feature tabs"
+          role="group"
+        >
+          <button
+            id="simple-bookmarking"
+            class="relative text-gray-500 text-sm md:text-base py-4 border-b border-t md:px-10 md:border-t-0 underline hover:text-red400"
+            type="button"
+            aria-pressed="true"
+            aria-label="Click in this label to see 'Simple bookmarking'"
+          >
+            Simple Bookmarking
+          </button>
+          <button
+            id="speedy-searching"
+            class="relative text-gray-500 text-sm md:text-base py-4 border-b md:px-10 hover:text-red400"
+            type="button"
+            aria-pressed="false"
+            aria-label="Click in this label to see 'Speedy Searching'"
+          >
+            Speedy Searching
+          </button>
+          <button
+            id="easy-sharing"
+            class="relative text-gray-500 text-sm md:text-base py-4 border-b md:px-10 hover:text-red400"
+            type="button"
+            aria-pressed="false"
+            aria-label="Click in this label to see 'Easy Sharing'"
+          >
+            Easy Sharing
+          </button>
+        </div>
 
-  Simple Bookmarking
-  Speedy Searching
-  Easy Sharing
+        <div
+          class="flex flex-col gap-16 mt-6 md:flex-row md:items-center md:gap-0"
+        >
+          <div class="relative md:w-1/2">
+            <div
+              class="absolute -bottom-10 md:-bottom-24 left-0 w-[300px] md:w-[618px] h-[165px] md:h-[352px] bg-blue600 rounded-br-[35%] z-0"
+            ></div>
+            <img
+              id="carrousel-image"
+              class="relative z-10 w-[85%] mx-auto md:w-auto md:mx-0 md:ml-auto"
+              src="/images/illustration-features-tab-1.svg"
+              alt="Mockup ilustration"
+            />
+          </div>
+          <div
+            class="flex flex-col items-center gap-4 mx-10 md:items-start md:w-1/2 md:mx-0 md:pl-28 md:pr-40"
+          >
+            <h3
+              id="carrousel-title"
+              class="text-xl text-blue950 font-medium md:text-3xl"
+            >
+              Bookmark in one click
+            </h3>
+            <p
+              id="carrousel-description"
+              class="text-center text-gray-400 text-sm md:text-lg md:text-left"
+            >
+              Organize your bookmarks however you like. Our simple drag-and-drop
+              interface gives you complete control over how you manage your
+              favourite sites.
+            </p>
+            <button
+              class="hidden md:block bg-blue600 text-white rounded font-medium py-4 px-6"
+              type="button"
+              aria-label="Click this button to more information"
+            >
+              More Info
+            </button>
+          </div>
+        </div>
+      </section>
 
-  Bookmark in one click
+      <section
+        class="mx-10 flex flex-col items-center mt-[120px] md:mt-[236px]"
+        aria-labelledby="download-title"
+      >
+        <h2
+          class="text-xl text-blue950 font-medium md:text-3xl"
+          id="download-title"
+        >
+          Download the extension
+        </h2>
+        <p
+          class="text-center text-gray-400 text-sm mt-4 md:text-lg md:w-[543px]"
+        >
+          We’ve got more browsers in the pipeline. Please do let us know if
+          you’ve got a favourite you’d like us to prioritize.
+        </p>
 
-  Organize your bookmarks however you like. Our simple drag-and-drop interface 
-  gives you complete control over how you manage your favourite sites.
+        <div
+          class="relative flex flex-col gap-6 mt-6 w-full md:flex-row md:px-64"
+        >
+          <div
+            class="flex flex-col items-center gap-2.5 p-6 w-full rounded-lg shadow-lg md:relative md:w-1/3 md:mt-0 md:h-fit"
+          >
+            <img
+              class="mt-10"
+              src="/images/logo-chrome.svg"
+              alt="Chrome Icon"
+            />
+            <p class="text-xl text-blue950 font-medium mt-2">Add to Chrome</p>
+            <p class="text-gray-400 text-sm mb-10">Minimum version 62</p>
+            <div
+              class="absolute left-0 top-[257px] w-full h-[4px] bg-[radial-gradient(circle,_theme('colors.gray.200')_2px,_transparent_1px)] bg-[length:20px_2px] mb-6"
+            ></div>
+            <button
+              class="bg-blue600 px-5 py-3.5 w-full rounded text-white font-medium text-sm hover:bg-white hover:border-2 hover:border-blue600 hover:text-blue-600 transition-colors duration-300 ease-in-out"
+              type="button"
+              aria-label="Click this button to Add & Install Extension"
+            >
+              Add & Install Extension
+            </button>
+          </div>
 
-  More Info
+          <div
+            class="relative flex flex-col items-center gap-2.5 p-6 w-full rounded-lg shadow-lg md:w-1/3 md:mt-10 md:h-fit"
+          >
+            <img
+              class="mt-10"
+              src="/images/logo-firefox.svg"
+              alt="Firefox Icon"
+            />
+            <p class="text-xl text-blue950 font-medium mt-2">Add to Firefoxe</p>
+            <p class="text-gray-400 text-sm mb-10">Minimum version 55</p>
+            <div
+              class="absolute left-0 top-[257px] w-full h-[4px] bg-[radial-gradient(circle,_theme('colors.gray.200')_2px,_transparent_1px)] bg-[length:20px_2px] mb-6"
+            ></div>
+            <button
+              class="bg-blue600 px-6 py-3.5 w-full rounded text-white font-medium text-sm hover:bg-white hover:border-2 hover:border-blue600 hover:text-blue-600 transition-colors duration-300 ease-in-out"
+              type="button"
+              aria-label="Click this button to Add & Install Extension"
+            >
+              Add & Install Extension
+            </button>
+          </div>
 
-  Intelligent search
+          <div
+            class="relative flex flex-col items-center gap-2.5 p-6 w-full rounded-lg shadow-lg md:w-1/3 md:mt-20"
+          >
+            <img class="mt-10" src="/images/logo-opera.svg" alt="Opera Icon" />
+            <p class="text-xl text-blue950 font-medium mt-2">Add to Opera</p>
+            <p class="text-gray-400 text-sm mb-10">Minimum version 46</p>
+            <div
+              class="absolute left-0 top-[257px] w-full h-[4px] bg-[radial-gradient(circle,_theme('colors.gray.200')_2px,_transparent_1px)] bg-[length:20px_2px] mb-6"
+            ></div>
+            <button
+              class="bg-blue600 px-6 py-3.5 w-full rounded text-white font-medium text-sm hover:bg-white hover:border-2 hover:border-blue600 hover:text-blue-600 transition-colors duration-300 ease-in-out"
+              type="button"
+              aria-label="Click this button to Add & Install Extension"
+            >
+              Add & Install Extension
+            </button>
+          </div>
+        </div>
+      </section>
 
-  Our powerful search feature will help you find saved sites in no time at all. 
-  No need to trawl through all of your bookmarks.
+      <section
+        class="flex flex-col items-center gap-12 mt-[113px] mx-10 md:mt-[153px]"
+        aria-labelledby="faq-title"
+      >
+        <div class="flex flex-col items-center">
+          <h2
+            class="text-xl text-center text-blue950 font-medium w-[80%] md:text-3xl"
+            id="faq-title"
+          >
+            Frequently Asked Questions
+          </h2>
+          <p
+            class="text-center text-gray-400 text-sm mt-3 md:text-lg md:w-[510px] md:mt-5"
+          >
+            Here are some of our FAQs. If you have any other questions you’d
+            like answered please feel free to email us.
+          </p>
+        </div>
 
-  More Info
+        <div class="flex flex-col w-full md:px-[448px]">
+          <div>
+            <div class="flex justify-between py-4 border-b">
+              <p
+                class="text-sm md:text-base text-blue950 hover:text-red400 transition-colors duration-200 ease-in-out cursor-pointer"
+              >
+                What is Bookmark?
+              </p>
+              <button
+                type="button"
+                aria-label="Click to see the Answer"
+                class="faq-button"
+              >
+                <img src="/images/icon-arrow.svg" alt="Arrow Icon" />
+              </button>
+            </div>
+            <p aria-expanded="false" class="hidden text-gray-500 text-sm mt-4 leading-relaxed">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+              tincidunt justo eget ultricies fringilla. Phasellus blandit ipsum
+              quis quam ornare mattis.
+            </p>
+          </div>
 
-  Share your bookmarks
+          <div>
+            <div class="flex justify-between py-4 border-b">
+              <p
+                class="text-sm md:text-base text-blue950 hover:text-red400 transition-colors duration-200 ease-in-out cursor-pointer"
+              >
+                How can I request a new browser?
+              </p>
+              <button
+                type="button"
+                aria-label="Click to see the Answer"
+                class="faq-button"
+              >
+                <img src="/images/icon-arrow.svg" alt="Arrow Icon" />
+              </button>
+            </div>
+            <p aria-expanded="false" class="hidden text-gray-500 text-sm mt-4 leading-relaxed">
+              Vivamus luctus eros aliquet convallis ultricies. Mauris augue
+              massa, ultricies non ligula. Suspendisse imperdiet. Vivamus luctus
+              eros aliquet convallis ultricies. Mauris augue massa, ultricies
+              non ligula. Suspendisse imperdie tVivamus luctus eros aliquet
+              convallis ultricies. Mauris augue massa, ultricies non ligula.
+              Suspendisse imperdiet.
+            </p>
+          </div>
 
-  Easily share your bookmarks and collections with others. Create a shareable 
-  link that you can send at the click of a button.
+          <div>
+            <div class="flex justify-between py-4 border-b">
+              <p
+                class="text-sm md:text-base text-blue950 hover:text-red400 transition-colors duration-200 ease-in-out cursor-pointer"
+              >
+                Is there a mobile app?
+              </p>
+              <button
+                type="button"
+                aria-label="Click to see the Answer"
+                class="faq-button"
+              >
+                <img src="/images/icon-arrow.svg" alt="Arrow Icon" />
+              </button>
+            </div>
+            <p aria-expanded="false" class="hidden text-gray-500 text-sm mt-4 leading-relaxed">
+              Sed consectetur quam id neque fermentum accumsan. Praesent luctus
+              vestibulum dolor, ut condimentum urna vulputate eget. Cras in
+              ligula quis est pharetra mattis sit amet pharetra purus. Sed
+              sollicitudin ex et ultricies bibendum.
+            </p>
+          </div>
 
-  More Info
+          <div>
+            <div class="flex justify-between py-4 border-b">
+              <p
+                class="text-sm md:text-base text-blue950 hover:text-red400 transition-colors duration-200 ease-in-out cursor-pointer"
+              >
+                What about other Chromium browsers?
+              </p>
+              <button
+                type="button"
+                aria-label="Click to see the Answer"
+                class="faq-button"
+              >
+                <img src="/images/icon-arrow.svg" alt="Arrow Icon" />
+              </button>
+            </div>
+            <p aria-expanded="false" class="hidden text-gray-500 text-sm mt-4 leading-relaxed">
+              Integer condimentum ipsum id imperdiet finibus. Vivamus in
+              placerat mi, at euismod dui. Aliquam vitae neque eget nisl gravida
+              pellentesque non ut velit. More Info 35,000+ already joined Stay
+              up-to-date with what we’re doing Contact Us Features Pricing
+              Contact.
+            </p>
+          </div>
+        </div>
+        <button
+          class="bg-blue600 text-white rounded font-medium py-4 px-6"
+          type="button"
+          aria-label="Click this button to more information"
+        >
+          More Info
+        </button>
+      </section>
 
-  Download the extension
-
-  We’ve got more browsers in the pipeline. Please do let us know if you’ve 
-  got a favourite you’d like us to prioritize.
-
-  Add to Chrome
-  Minimum version 62
-  Add & Install Extension
-
-  Add to Firefox
-  Minimum version 55
-  Add & Install Extension
-
-  Add to Opera
-  Minimum version 46
-  Add & Install Extension
-
-  Frequently Asked Questions
-  
-  Here are some of our FAQs. If you have any other questions you’d like 
-  answered please feel free to email us.
-
-  <!-- Question 1 -->
-  What is Bookmark?
-
-  <!-- Answer 1 -->
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tincidunt 
-  justo eget ultricies fringilla. Phasellus blandit ipsum quis quam ornare mattis.
-
-  <!-- Question 2 -->
-  How can I request a new browser?
-
-  <!-- Answer 2 -->
-  Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa, ultricies non ligula. 
-  Suspendisse imperdiet. Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa, 
-  ultricies non ligula. Suspendisse imperdie tVivamus luctus eros aliquet convallis ultricies. 
-  Mauris augue massa, ultricies non ligula. Suspendisse imperdiet.
-
-  <!-- Question 3 -->
-  Is there a mobile app?
-
-  <!-- Answer 3 -->
-  Sed consectetur quam id neque fermentum accumsan. Praesent luctus vestibulum dolor, ut condimentum 
-  urna vulputate eget. Cras in ligula quis est pharetra mattis sit amet pharetra purus. Sed 
-  sollicitudin ex et ultricies bibendum.
-
-  <!-- Question 4 -->
-  What about other Chromium browsers?
-
-  <!-- Answer 4 -->
-  Integer condimentum ipsum id imperdiet finibus. Vivamus in placerat mi, at euismod dui. Aliquam 
-  vitae neque eget nisl gravida pellentesque non ut velit.
-
-  More Info
-
-  35,000+ already joined
-
-  Stay up-to-date with what we’re doing
-
-  Contact Us
-
-  Features
-  Pricing
-  Contact
-  
-  <footer>
-    <p class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-      Coded by <a href="#">Your Name Here</a>.
-    </p>
-  </footer>
-</body>
+      <section
+        class="flex flex-col items-center gap-4 mt-[100px] bg-blue600 p-8 md:px-[450px] md:gap-9 md:py-[75px] md:mt-[152px]"
+        aria-label="Form section to enter your email and contact us"
+      >
+        <p class="uppercase text-white text-xs tracking-[0.25em]">
+          35.000 + already joined
+        </p>
+        <p class="text-white font-medium text-2xl text-center md:text-4xl">
+          Stay up-date with what we're doing
+        </p>
+        <div class="flex flex-col gap-4 md:flex-row md:w-full">
+          <div
+            id="error-container"
+            class="relative w-full md:w-2/3 p-[3px] rounded-md"
+          >
+            <input
+              id="email-input"
+              class="w-full py-3.5 px-6 rounded"
+              type="email"
+              placeholder="Enter your email address"
+              aria-describedby="email-error"
+              required
+              autocomplete="true"
+            />
+            <img
+              id="error-image"
+              class="hidden absolute top-[26px] -translate-y-1/2 right-3"
+              src="/images/icon-error.svg"
+              alt=""
+            />
+            <p id="email-error" class="hidden text-white text-xs italic p-1">
+              Whoops. Make sure it's an email
+            </p>
+          </div>
+          <button
+            id="contact-us-button"
+            class="bg-red400 w-full md:h-[58px] md:w-1/3 text-center text-white py-3.5 rounded font-medium transition-colors duration-200 ease-in-out hover:bg-white hover:border-2 hover:border-red400 hover:text-red400"
+            type="submit"
+            aria-label="Click this button to contact us"
+          >
+            Contact Us
+          </button>
+        </div>
+      </section>
+    </main>
+    <footer
+      class="flex flex-col items-center gap-6 bg-blue950 h-full py-8 md:flex-row md:px-[165px] md:gap-[60px]"
+    >
+      <img src="/images/logo-bookmark-white.svg" alt="Bookmark logo" />
+      <p
+        class="uppercase text-white tracking-widest font-light hover:text-red400 cursor-pointer"
+      >
+        Features
+      </p>
+      <p
+        class="uppercase text-white tracking-widest font-light hover:text-red400 cursor-pointer"
+      >
+        Pricing
+      </p>
+      <p
+        class="uppercase text-white tracking-widest font-light hover:text-red400 cursor-pointer"
+      >
+        Contact
+      </p>
+      <div class="flex gap-8 md:ml-auto">
+        <img
+          id="facebook"
+          src="/images/icon-facebook.svg"
+          alt="Facebook icon"
+          class="cursor-pointer"
+        />
+        <img
+          id="twitter"
+          src="/images/icon-twitter.svg"
+          alt="Twitter icon"
+          class="cursor-pointer"
+        />
+      </div>
+    </footer>
+    <script src="/script.js"></script>
+  </body>
 </html>
